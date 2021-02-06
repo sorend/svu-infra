@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - sealedsecret.yaml
 - notifier-slack.yaml
-namespace: default
+namespace: adpy
