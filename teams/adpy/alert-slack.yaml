@@ -1,0 +1,14 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Alert
+metadata:
+  name: adpy-info
+spec:
+  providerRef: 
+    name: slack-info
+  eventSeverity: info
+  eventSources:
+    - kind: GitRepository
+      name: flux-system
+      namespace: flux-system
+    - kind: Kustomization
+      name: adpy
