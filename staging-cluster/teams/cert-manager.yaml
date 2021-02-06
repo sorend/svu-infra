@@ -24,7 +24,8 @@ metadata:
   name: cert-manager-config
   namespace: cert-manager
 spec:
-  dependsOn: cert-manager
+  dependsOn: 
+  - cert-manager
   interval: 5m
   path: "./teams/cert-manager/config"
   prune: true
