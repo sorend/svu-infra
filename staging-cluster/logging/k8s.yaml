@@ -90,11 +90,11 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          #- name: LOGZIO_TOKEN
-          #  valueFrom:
-          #    secretKeyRef:
-          #      name: fluentd-k8s
-          #      key: logzio.token
+          - name: HUMIO_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: fluentd-k8s
+                key: humio.token
           - name: LOGGLY_TOKEN
             valueFrom:
               secretKeyRef:
@@ -277,6 +277,16 @@ data:
         #    queue_limit_length 4096
         #  </buffer>
         #</store>
+        <store>
+          @type           elasticsearch
+          host            cloud.humio.com
+          port            9200
+          scheme          https
+          ssl_version     TLSv1_2
+          user            sandbox
+          password        "#{ENV['HUMIO_TOKEN']}"
+          logstash_format true
+        </store>
         <store>
           @id loggly_writer
           @type loggly
