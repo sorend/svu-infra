@@ -4,5 +4,4 @@ resources:
 - sealedsecret.yaml
 - notifier-slack.yaml
 - alert-slack.yaml
-- gumbo.yaml
 namespace: adpy
