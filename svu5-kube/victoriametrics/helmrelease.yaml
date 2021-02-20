@@ -12,9 +12,9 @@ spec:
         kind: HelmRepository
         name: victoriametrics
         namespace: flux-system
-    install:
-      remediation:
-        retries: 3
+  install:
+    remediation:
+      retries: 3
   valuesFrom:
     - kind: ConfigMap
       name: victoria-metrics-values
