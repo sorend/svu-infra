@@ -15,4 +15,4 @@ spec:
       retries: 3
   valuesFrom:
     - kind: ConfigMap
-      name: victoria-metrics-values
+      name: victoriametrics-values
