@@ -2,4 +2,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: victoriametrics
+  annotations:
+    fluentd/include: "true"
+    fluentd/multiline: "false"
 
