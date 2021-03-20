@@ -12,7 +12,7 @@ spec:
     storage:
       volumeClaimTemplate:
         spec:
-          storageClassName: standard
+          storageClassName: ""
           resources:
             requests:
               storage: 10Gi
