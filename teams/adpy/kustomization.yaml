@@ -1,7 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: adpy
 resources:
 - sealedsecret.yaml
+- sealedsecret-adpy.yaml
 - notifier-slack.yaml
 - alert-slack.yaml
-namespace: adpy
+# - web-backend.yaml
