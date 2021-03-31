@@ -19,7 +19,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./svu5-kube/flux-system
+  path: ./svu6-kube/flux-system
   prune: true
   sourceRef:
     kind: GitRepository

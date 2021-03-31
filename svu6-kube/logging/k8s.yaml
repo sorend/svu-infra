@@ -290,7 +290,7 @@ data:
         <store>
           @id loggly_writer
           @type loggly
-          loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/svu4"
+          loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/svu6"
         </store>
         <store>
           @type prometheus

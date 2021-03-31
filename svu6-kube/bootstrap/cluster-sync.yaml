@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./svu5-kube/bootstrap
+  path: ./svu6-kube/bootstrap
   prune: true
   sourceRef:
     kind: GitRepository
