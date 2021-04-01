@@ -6,4 +6,5 @@ resources:
 - sealedsecret-adpy.yaml
 - notifier-slack.yaml
 - alert-slack.yaml
+- adpy.yaml
 # - web-backend.yaml
