@@ -4,7 +4,9 @@ namespace: adpy
 resources:
 - sealedsecret.yaml
 - sealedsecret-adpy.yaml
+- sealedsecret-flickr-backup.yaml
 - notifier-slack.yaml
 - alert-slack.yaml
 - adpy.yaml
+- cronjob-flickr-backup.yaml
 # - web-backend.yaml
