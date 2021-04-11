@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jens
+  annotations:
+    kubernetes.io/contact-email: "jens@kollerupgaard.dk"
+    fluentd/include: "true"
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: admin
+subjects:
+  - kind: ServiceAccount
+    name: admin
+    namespace: jens
+    apiGroup: ""
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: ""
+
