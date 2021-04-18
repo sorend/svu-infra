@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: athens
+  annotations:
+    kubernetes.io/contact-email: "sorend@gmail.com"
+    fluentd/include: "true"
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: athens
+  namespace: athens
+spec:
+  interval: 5m
+  path: "./teams/athens"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
