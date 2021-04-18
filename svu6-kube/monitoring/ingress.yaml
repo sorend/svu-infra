@@ -1,0 +1,49 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: monitoring
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+spec:
+  tls:
+  - hosts:
+    - grafana.mon.cs.svu-ac.in
+    - alertmanager.mon.cs.svu-ac.in
+    - prometheus.mon.cs.svu-ac.in
+    secretName: mon-cs-svu-ac-in-tls
+  rules:
+  - host: prometheus.mon.cs.svu-ac.in
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: prometheus-k8s
+            port:
+              number: 9090
+  - host: grafana.mon.cs.svu-ac.in
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana
+            port:
+              number: 3000
+  - host: alertmanager.mon.cs.svu-ac.in
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: alertmanager-main
+            port:
+              number: 9093
+
+
