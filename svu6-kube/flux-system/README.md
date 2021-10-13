@@ -10,7 +10,7 @@ k apply -f gotk-components.yaml
 # setup flux sync
 k apply -f gotk-sync.yaml
 # add the secret that flux needs for accessing github
-k apply -f $HOME/.flux/secret.yaml
+k apply -f $HOME/Mega/personal/secrets/flux-secret.yaml
 
 # add cluster bootstrap
 k apply -f ../bootstrap/cluster-sync.yaml
