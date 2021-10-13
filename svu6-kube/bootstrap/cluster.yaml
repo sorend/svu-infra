@@ -76,20 +76,20 @@ spec:
     name: flux-system
   validation: client
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: kyverno
-  namespace: flux-system
-spec:
-  interval: 5m
-  path: ./svu6-kube/kyverno
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  validation: client
----
+#apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+#kind: Kustomization
+#metadata:
+#  name: kyverno
+#  namespace: flux-system
+#spec:
+#  interval: 5m
+#  path: ./svu6-kube/kyverno
+#  prune: true
+#  sourceRef:
+#    kind: GitRepository
+#    name: flux-system
+#  validation: client
+#---
 #apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 #kind: Kustomization
 #metadata:
