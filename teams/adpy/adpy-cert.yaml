@@ -1,0 +1,13 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: adpy-cert
+spec:
+  commonName: vvv.atmakuridavidsen.com
+  secretName: adpy-cert
+  dnsNames:
+    - vvv.atmakuridavidsen.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer

@@ -83,27 +83,3 @@ spec:
     targetPort: 8080
   selector:
     app: adpy-server
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: adpy
-  annotations:
-    kubernetes.io/ingress.class: traefik
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-spec:
-  tls:
-  - hosts:
-    - vvv.atmakuridavidsen.com
-    secretName: adpy-tls
-  rules:
-  - host: vvv.atmakuridavidsen.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: adpy
-            port:
-              number: 80
