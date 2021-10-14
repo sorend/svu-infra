@@ -9,5 +9,5 @@ patchesStrategicMerge:
   kind: Namespace
   metadata:
     name: cert-manager
-    labels:
+    annotations:
       fluentd/include: "true"
