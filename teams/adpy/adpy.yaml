@@ -83,3 +83,20 @@ spec:
     targetPort: 8080
   selector:
     app: adpy-server
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: adpy
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`vvv.atmakuridavidsen.com`)
+      kind: Rule
+      services:
+        - name: adpy
+          port: 80
+  tls:
+    secretName: adpy-cert
+
