@@ -10,5 +10,5 @@ patchesStrategicMerge:
   metadata:
     name: flux-system
     annotations:
-      fluentd/include: "true"
+      logging/include: "true"
 
