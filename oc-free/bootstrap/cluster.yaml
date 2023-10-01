@@ -1,81 +1,80 @@
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1
+# kind: Kustomization
+# metadata:
+#   name: cert-manager
+#   namespace: flux-system
+# spec:
+#   interval: 5m
+#   path: ./svu6-kube/cert-manager/setup
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+#     namespace: flux-system
+#   healthChecks:
+#   - apiVersion: apps/v1
+#     kind: Deployment
+#     name: cert-manager
+#     namespace: cert-manager
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1
+# kind: Kustomization
+# metadata:
+#   name: cert-manager-config
+#   namespace: flux-system
+# spec:
+#   dependsOn:
+#   - name: cert-manager
+#   interval: 5m
+#   path: ./svu6-kube/cert-manager/config
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+#     namespace: flux-system
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: cert-manager
-  namespace: flux-system
-spec:
-  interval: 5m
-  path: ./svu6-kube/cert-manager/setup
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-    namespace: flux-system
-  healthChecks:
-  - apiVersion: apps/v1
-    kind: Deployment
-    name: cert-manager
-    namespace: cert-manager
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: cert-manager-config
-  namespace: flux-system
-spec:
-  dependsOn: 
-  - name: cert-manager
-  interval: 5m
-  path: ./svu6-kube/cert-manager/config
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-    namespace: flux-system
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: sealed-secrets
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./svu6-kube/sealed-secrets
+  path: ./oc-free/sealed-secrets
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  validation: client
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: logging
-  namespace: flux-system
-spec:
-  interval: 5m
-  path: ./svu6-kube/logging
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  validation: client
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: teams
-  namespace: flux-system
-spec:
-  interval: 5m
-  path: ./svu6-kube/teams
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  validation: client
----
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+# kind: Kustomization
+# metadata:
+#   name: logging
+#   namespace: flux-system
+# spec:
+#   interval: 5m
+#   path: ./svu6-kube/logging
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+#   validation: client
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+# kind: Kustomization
+# metadata:
+#   name: teams
+#   namespace: flux-system
+# spec:
+#   interval: 5m
+#   path: ./svu6-kube/teams
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+#   validation: client
+# ---
 #apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 #kind: Kustomization
 #metadata:
