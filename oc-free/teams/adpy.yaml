@@ -5,7 +5,7 @@ metadata:
   name: adpy
   annotations:
     kubernetes.io/contact-email: "sorend@gmail.com"
-    fluentd/include: "true"
+    logging/include: "true"
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
