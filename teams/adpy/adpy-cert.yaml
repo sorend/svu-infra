@@ -1,10 +1,9 @@
 ---
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: adpy-cert
 spec:
-  commonName: xyz.atmakuridavidsen.com
   secretName: adpy-cert
   dnsNames:
     - xyz.atmakuridavidsen.com
