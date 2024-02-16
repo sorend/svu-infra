@@ -5,4 +5,5 @@ resources:
   - vm-operator.yaml
   - vmcluster.yaml
   - vmagent.yaml
+  - vmscrapeservice.yaml
 namespace: vm
