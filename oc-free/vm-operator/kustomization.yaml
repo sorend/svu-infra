@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - vm-operator.yaml
+  - vmcluster.yaml
 namespace: vm
