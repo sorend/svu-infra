@@ -6,4 +6,5 @@ resources:
   - vmcluster.yaml
   - vmagent.yaml
   - vmscrapeservice.yaml
+  - vmauth.yaml
 namespace: vm
