@@ -1,10 +1,5 @@
-
-
-
 operator:
-  # -- By default, operator converts prometheus-operator objects.
   disable_prometheus_converter: true
-
 
 resources:
   limits:
@@ -14,11 +9,10 @@ resources:
     cpu: 10m
     memory: 120Mi
 
-
 admissionWebhooks:
   enabled: true
   certManager:
     enabled: true
 
-serviceMonitor:
-  enabled: true
+# serviceMonitor:
+#   enabled: true
