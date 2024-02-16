@@ -4,4 +4,5 @@ resources:
   - namespace.yaml
   - vm-operator.yaml
   - vmcluster.yaml
+  - vmagent.yaml
 namespace: vm
