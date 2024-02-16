@@ -1,18 +1,5 @@
-operator:
-  disable_prometheus_converter: true
-
-resources:
-  limits:
-    cpu: 120m
-    memory: 320Mi
-  requests:
-    cpu: 10m
-    memory: 120Mi
-
-admissionWebhooks:
-  enabled: true
-  certManager:
+vmsingle:
+  ingress:
     enabled: true
-
-# serviceMonitor:
-#   enabled: true
+    hosts:
+    - vm.hamisoke.com
