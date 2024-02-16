@@ -7,4 +7,5 @@ resources:
   - vmagent.yaml
   - vmscrapeservice.yaml
   - vmauth.yaml
+  - vmuser.yaml
 namespace: vm
